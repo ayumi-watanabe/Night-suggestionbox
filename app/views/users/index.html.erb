@@ -1,0 +1,17 @@
+<% provide(:title, 'User') %>
+<div class="form content">
+    <h1 class="text-center">List of Users</h1>
+        <div class="container">
+            <ul class="users">
+                <% @users.each do |user| %>
+                    <li>
+                        <%= gravatar_for user, size: 52 %>
+                        <%= link_to user.name, user %>
+                        <%= link_to 'delete', user_path(user), method: :delete, data: { confirm: "You sure?" } %>
+                    </li>
+                <% end %>
+                <%= will_paginate %>
+            </ul>
+        </div>
+</div>
+    

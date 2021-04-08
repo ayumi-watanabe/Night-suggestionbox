@@ -1,0 +1,21 @@
+<% provide(:title, 'Signup') %>
+
+<div class="jumbotron bg-dark text-light m-4">
+    <%= render 'form' %>
+    <% provide(:title, 'Login') %>
+<div class="form jumbotron bg-dark text-light">
+    <h1 class="text-center display-4">Login</h1>
+    <div class="container">
+        <%= form_for(:session, url: sessions_path) do |f| %>
+            <%= f.label :email %>
+            <%= f.text_field :email, class: "form-control" %>
+
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "form-control" %>
+
+            <%= f.submit "Login", class: "btn btn-block btn-primary" %>
+        <% end %>
+        <p>New here? <%= link_to "Sign up now!", signup_path %></p>
+    </div>
+</div>
+</div>
